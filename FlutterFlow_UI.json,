@@ -1,0 +1,106 @@
+{
+  "componentName": "OpenFeedHomeAndReels",
+  "type": "Page",
+  "parameters": {},
+  "stateVariables": {
+    "currentFeedTab": "reels",
+    "isWalletConnected": "false"
+  },
+  "theme": {
+    "primaryColor": "#10B981",
+    "backgroundColor": "#090A0F",
+    "textColor": "#FFFFFF"
+  },
+  "layoutStructure": {
+    "type": "SafeArea",
+    "child": {
+      "type": "Column",
+      "children": [
+        {
+          "type": "HeaderBar",
+          "properties": {
+            "title": "OpenFeed",
+            "style": {
+              "fontFamily": "Inter",
+              "fontWeight": "Bold",
+              "fontSize": 22,
+              "color": "#10B981"
+            },
+            "leadingIcon": "WalletIcon",
+            "onLeadingPress": "triggerWalletAuth"
+          }
+        },
+        {
+          "type": "FeedContainer",
+          "properties": {
+            "scrollDirection": "Vertical",
+            "pagingEnabled": true
+          },
+          "children": [
+            {
+              "type": "ReelsPlayerCard",
+              "properties": {
+                "videoSource": "IPFS_Gateway_URI",
+                "aspectRatio": "9:16"
+              },
+              "children": [
+                {
+                  "type": "OverlayVotePanel",
+                  "properties": {
+                    "alignment": "BottomRight"
+                  },
+                  "children": [
+                    {
+                      "type": "UpvoteButton",
+                      "properties": {
+                        "icon": "ArrowUp",
+                        "color": "#10B981",
+                        "action": "triggerUpvoteContract"
+                      }
+                    },
+                    {
+                      "type": "VoteCountText",
+                      "properties": {
+                        "value": "TrustScore"
+                      }
+                    },
+                    {
+                      "type": "DownvoteButton",
+                      "properties": {
+                        "icon": "ArrowDown",
+                        "color": "#EF4444",
+                        "action": "triggerDownvoteContract"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BottomNavigationBar",
+          "properties": {
+            "selectedColor": "#10B981",
+            "unselectedColor": "#9CA3AF"
+          },
+          "items": [
+            {
+              "icon": "Home",
+              "label": "Feed"
+            },
+            {
+              "icon": "PlusCircle",
+              "label": "Create",
+              "action": "openMediaUploader"
+            },
+            {
+              "icon": "User",
+              "label": "Profile"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
