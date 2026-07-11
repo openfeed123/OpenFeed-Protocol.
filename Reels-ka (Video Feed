@@ -1,0 +1,12 @@
+## 5. Decentralized Video & Reels Infrastructure
+
+To support high-bandwidth media such as short-form video (Reels) without relying on centralized cloud providers, OpenFeed utilizes a decentralized media architecture.
+
+### 5.1 Media Storage and Streaming
+* **Storage Protocol:** All video files and reels are chunked, encrypted, and stored across IPFS (InterPlanetary File System) and Arweave, ensuring permanent, censorship-resistant availability.
+* **Transcoding & Delivery:** Video processing and transcoding are handled via the Livepeer network, a decentralized video services protocol that optimizes video delivery for mobile devices dynamically.
+
+### 5.2 Video Engagement & Reward Structure
+Every video post contains interactive overlay elements:
+* **Dynamic Vote Overlay:** Users can issue asymmetric Upvotes/Downvotes directly while viewing the video.
+* **Bandwidth Compensation:** Creators of high-engagement video content receive a higher tier of $FEED Token rewards to compensate for the cost of decentralized rendering and storage allocation.
